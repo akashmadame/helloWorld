@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+   <bean id = "helloSpring" class = "com.rwd.HelloSpring">
+      <property name = "message" value = "Hello Spring World!"/>
+   </bean>
+   
+   <bean id ="xmlBean" class ="com.rwd.xmlbean.HelloXml">
+   <property name = "message" value = "I am XmlBean"></property>
+   </bean>
+   
+   <bean id = "fileBean" class="com.rwd.file.HelloFile">
+   <property name = "message" value = "I am File"></property>
+   </bean>
+   
+   <bean id = "singleton" class="com.singleton.HelloSingleton" scope="prototype">
+   <property name = "message" value = "Singleton"></property>
+   </bean>
+   
+   <bean id = "input" class = "init.destroy.HelloID" init-method="init" destroy-method="destroy">
+   <property name="message" value = "Lets see"></property>
+   </bean>
+   
+   <bean id = "postProcessor" class = "beanPostProcessor.HelloPost"
+   init-method = "init" destroy-method = "destroy">
+      <property name = "message" value = "Hello World!"/>
+   </bean>
+   
+   <bean class = "beanPostProcessor.InitHelloWorld" />
+
+</beans>
